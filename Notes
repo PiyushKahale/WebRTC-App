@@ -1,0 +1,48 @@
+- { WebRTC } (Open Source Protocol)
+ - Web Real Time Communication
+ - Works Bi-directional
+ - ServerLess Communication - (client to client)
+ - 4 Stages - Signalling, Connecting, Securing, Communication
+ - API's - MediaStream, RTCPeerConnection, RTCDataChannel
+
+
+- { CORS }
+ - Cross - Origin Resource Sharing
+ - Security Feature for controling requests 
+ - requests for resources from different Origins(domains)
+ - prevent malwares from unauthorized requests
+
+
+- {  }
+ - Express
+ - createServer from "node:http"
+ - cors from "cors"
+ - Server from "socket.io"
+ - mongoose from "mongoose"
+
+
+
+- { Basic Setup }
+    - create express app
+    - put that app into createServer(app)
+    - put that server into Server from socket.io.
+    - now use server -> (in place of) -> app (for http verbs).
+
+
+- { Models }
+ - Users - id, username, password, tokens
+ - Meetings - id, 
+
+
+- { Tokens }
+    - Piece of data represents user credentials
+    - Ex - refresh tokens, ID tokens, access tokens
+    - "JWT" - JSON Web Token
+
+
+- { Stun Servers }
+    - lightweight servers running on public internet
+    - return the IP address of the requester's device.
+
+
+- { }

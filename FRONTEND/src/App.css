@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+.landingPageContainer {
+    width: 100vw;
+    height: 100vh;
+    background: url("../background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+}
+
+.landingPageContainer nav {
+    padding-inline: 1.2rem;
+    padding-block: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.landingPageContainer nav h2 {
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+.landingPageContainer nav .navList {
+    display: flex;
+    gap: 1.8rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.landingMainContainer {
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 3.5rem;
+    height: 80vh;
+    align-items: center;
+}
+
+.landingMainContainer > div:nth-child(1) {
+    font-size: 2rem;
+}
+
+.landingMainContainer > div:nth-child(1) div[role='button'] {
+    background: #f72585;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    width: fit-content;
+    padding: 0.3rem;
+    margin-top: 1rem;
+}
+
+.landingMainContainer > div:nth-child(2) img {
+    height: 45vh;
+    width: auto;
+    border-radius: 1rem;
+}
