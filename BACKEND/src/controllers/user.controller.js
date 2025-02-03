@@ -32,7 +32,7 @@ const login = async (req, res) => {
         } else {
             return res.status(httpStatus.UNAUTHORIZED).json({message: "Invalid Username or password."})
         }
-
+ 
     } catch (e) {
         return res.status(500).json({message: `Something went wrong ${e}`})
     }

@@ -7,7 +7,7 @@
 
 
 - { CORS }
- - Cross - Origin Resource Sharing
+ - Cross-Origin Resource Sharing
  - Security Feature for controling requests 
  - requests for resources from different Origins(domains)
  - prevent malwares from unauthorized requests
@@ -42,7 +42,8 @@
 
 - { Stun Servers }
     - lightweight servers running on public internet
-    - return the IP address of the requester's device.
+    - Return the IP address of the requester's device.
+    - Enabling devices to establish direct peer-to-peer connections, even when they are behind firewalls devices
 
 
 - { }

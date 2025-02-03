@@ -4,12 +4,12 @@ const meetingSchema = new Schema(
     {
         user_id: {type: String, required: true},
         meetingCode: {type: String, required: true},
-        date: {type: String, required: true, default: Date.now},
+        date: {type: String, default: Date.now, required: true}
     }
 )
 
 
-const Meet = mongoose.model("Meet", meetingSchema)
+const Meeting = mongoose.model("Meeting", meetingSchema)
 
 // -- { A, B, C } to export many things from one file 
-export { Meet }
+export { Meeting }

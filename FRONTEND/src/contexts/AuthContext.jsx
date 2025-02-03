@@ -4,10 +4,7 @@ import { useNavigate } from "react-router-dom";
 import httpStatus from 'http-status';
 
 
-
-export const AuthContext = createContext({
-
-});
+export const AuthContext = createContext();
 
 const client = axios.create({
     baseURL: "http://localhost:8000/api/v1/users"
@@ -15,7 +12,8 @@ const client = axios.create({
 
 
 export const AuthProvider = ({ children }) => {
-
+    
+    
     const authContext = useContext(AuthContext)
 
     const [userData, setUserData] = useState(authContext)
@@ -45,7 +43,7 @@ export const AuthProvider = ({ children }) => {
 
             if(request.status === httpStatus.OK) {
                 localStorage.setItem("token", request.data.token)
-                // router("/home")
+                router("/home")
             }
         } catch(err) {
             throw err;

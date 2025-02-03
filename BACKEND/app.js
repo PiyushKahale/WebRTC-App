@@ -1,40 +1,42 @@
 import express from "express"
-import {createServer} from "node:http"
+import {createServer} from "http"
 import mongoose from "mongoose"
 import cors from "cors"
-import { initializeSocket } from "./src/controllers/socketManager.js"
+import { connectToSocket } from "./src/controllers/socketManager.js"
 import userRoutes from "./src/routes/users.route.js"
 
 
-const app = express()
+const app = express();
 const server = createServer(app);
-const io = initializeSocket(server)
+const io = connectToSocket(server)
 
 // set & get method  ----
-// app.set("port", (process.env.PORT || 8000));
+const PORT = process.env.PORT || 8000;
+const mongoURL = "mongodb+srv://pyush671:KlemwCBI8qRyJhID@cluster1.vmu33.mongodb.net/";
 
-
-app.use(cors())
-app.use(express.json({limit: "40kb"}))
-app.use(express.urlencoded({limit: "40kb", extended: true}))
+app.use(cors());
+app.use(express.json({limit: "40kb"}));
+app.use(express.urlencoded({limit: "40kb", extended: true}));
 
 app.use("/api/v1/users", userRoutes);
 
+app.get("/", (req, res) => {
+    res.send("BACKEND is Ready....!");
+})
+
 
 const start = async () => {
+    try {
+        const connectionDb = await mongoose.connect(mongoURL)
+        console.log("✅ MongoDB Connected");
+    } catch(err) {
+        console.log(err);
+    }
 
     // Start the Server ----
-    server.listen(8000, () => {
-        console.log("LISTENING ON PORT 8000...")
-    })
-
-    const connectionDb = await mongoose.connect(
-        "mongodb+srv://pyush671:KlemwCBI8qRyJhID@cluster1.vmu33.mongodb.net/"
-    )
-    console.log()
-    // app.listen(8000, () => {
-    //     console.log("LISTENING ON PORT 8000")
-    // })
+    server.listen(PORT, () => {
+        console.log(`Server is Listening on ${PORT}...`)
+    });
 }
 
 start();
